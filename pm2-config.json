@@ -1,0 +1,14 @@
+{
+    "apps": [{
+            "name": "register-api",
+            "script": "./src/index.js",
+            "env": {
+                    "PORT": "3500",
+                    "VERIFY_HOST": "http://localhost"
+            },
+            "env_production": {
+                    "PORT": "5500",
+                    "VERIFY_HOST": "https://host.register.seliso.chat"
+            }
+    }]
+}

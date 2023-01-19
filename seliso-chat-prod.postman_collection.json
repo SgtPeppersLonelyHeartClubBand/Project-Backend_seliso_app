@@ -1,0 +1,436 @@
+{
+	"info": {
+		"_postman_id": "5ec49769-4323-4218-8b95-57c24438ae3f",
+		"name": "seliso-chat-prod",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4009981"
+	},
+	"item": [
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"igithks@gmail.com\",\r\n    \"password\":\"coba123\"\r\n}"
+						},
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/user/register",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						},
+						"description": "Register new user"
+					},
+					"response": []
+				},
+				{
+					"name": "Check-User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "973c93a263eb1c492a0210805b6bce236f44a8f9ebbb8880c2f27a723b75f43d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/user/get-user?email=igithks@gmail.com",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"get-user"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "igithks@gmail.com"
+								}
+							]
+						},
+						"description": "get user information"
+					},
+					"response": []
+				},
+				{
+					"name": "Check-API",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sessionName\": \"session1\",\r\n  \"role\": 1,\r\n  \"sessionKey\": \"none\",\r\n  \"userIdentity\": \"user123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/user/check-api",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"check-api"
+							]
+						},
+						"description": "to get api information and version"
+					},
+					"response": []
+				},
+				{
+					"name": "Get-All-Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/user/get-all-users",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"get-all-users"
+							]
+						},
+						"description": "get all Registered Users"
+					},
+					"response": []
+				},
+				{
+					"name": "Unregister-User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/user/unregister?email=igithks@gmail.com",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"unregister"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "igithks@gmail.com"
+								}
+							]
+						},
+						"description": "Remove User"
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"coba01@gmail.com\",\r\n    \"newPassword\":\"coba1234\"\r\n}"
+						},
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/user/update-password",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update-password"
+							]
+						},
+						"description": "Update password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server Management",
+			"item": [
+				{
+					"name": "Create-New-Server",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serverName\":\"seliso001.m.in-app.io\",\r\n    \"priority\":1\r\n}"
+						},
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/server/create-server",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"server",
+								"create-server"
+							]
+						},
+						"description": "Create sesilo server"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-Server",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/server/delete-server?serverName=seliso002-test.m.in-app.io",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"server",
+								"delete-server"
+							],
+							"query": [
+								{
+									"key": "serverName",
+									"value": "seliso002-test.m.in-app.io"
+								}
+							]
+						},
+						"description": "delete seliso server"
+					},
+					"response": []
+				},
+				{
+					"name": "Get-All-Server",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/server/get-all-server",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"server",
+								"get-all-server"
+							]
+						},
+						"description": "Get All fluux server"
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Priority",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serverName\":\"seliso002-test.m.in-app.io\",\r\n    \"priority\":2\r\n}"
+						},
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/server/update-priority",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"server",
+								"update-priority"
+							]
+						},
+						"description": "Change server priority"
+					},
+					"response": []
+				},
+				{
+					"name": "Check-API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/server/check-api",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"server",
+								"check-api"
+							]
+						},
+						"description": "check email verification API"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Verification",
+			"item": [
+				{
+					"name": "User-Verification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/verify/confirm?id=VTJGc2RHVmtYMTl3anF6ZGYzN01QcVMxSWIxRnF2ZCtycWdyUFk5RHJBS0U4WlAzeDNaZE9aeERQY29IbDB1dUhuM282V2Eya2ZNNmxSeTFKczYvalJPL3huOVBCeXYxWXZrd1pJaHdHS3RFNXBnQ0RhaGhnakRGcnRpOHlldGlWd2cxMzZhZDExeGhWSG9BZFNmVi93PT0=",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"verify",
+								"confirm"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "VTJGc2RHVmtYMTl3anF6ZGYzN01QcVMxSWIxRnF2ZCtycWdyUFk5RHJBS0U4WlAzeDNaZE9aeERQY29IbDB1dUhuM282V2Eya2ZNNmxSeTFKczYvalJPL3huOVBCeXYxWXZrd1pJaHdHS3RFNXBnQ0RhaGhnakRGcnRpOHlldGlWd2cxMzZhZDExeGhWSG9BZFNmVi93PT0="
+								}
+							]
+						},
+						"description": "Email verification"
+					},
+					"response": []
+				},
+				{
+					"name": "Check-API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://host.register.seliso.chat/api/v1/verify/check-api",
+							"protocol": "https",
+							"host": [
+								"host",
+								"register",
+								"seliso",
+								"chat"
+							],
+							"path": [
+								"api",
+								"v1",
+								"verify",
+								"check-api"
+							]
+						},
+						"description": "check email verification API"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "2890f9db-2ed1-42b0-a919-6d258ea02904",
+		"name": "seliso-chat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4009981"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/api/v1/user/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"igithks@gmail.com\",\r\n    \"password\":\"coba123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"register"
+					]
+				},
+				"description": "Register new user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/user/get-user?email=test@coba.com",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "973c93a263eb1c492a0210805b6bce236f44a8f9ebbb8880c2f27a723b75f43d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/user/get-user?email=coba01@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"get-user"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "coba01@gmail.com"
+						}
+					]
+				},
+				"description": "get user information"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/user/check-api",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sessionName\": \"session1\",\r\n  \"role\": 1,\r\n  \"sessionKey\": \"none\",\r\n  \"userIdentity\": \"user123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/user/check-api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"check-api"
+					]
+				},
+				"description": "to get api information and version"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/user/get-all-users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/user/get-all-users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"get-all-users"
+					]
+				},
+				"description": "get all Registered Users"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/user/unregister?email=coba6@gmail.com",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/user/unregister?email=igithks@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"unregister"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "igithks@gmail.com"
+						}
+					]
+				},
+				"description": "Remove User"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/user/update-password",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"coba01@gmail.com\",\r\n    \"newPassword\":\"coba1234\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/user/update-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"update-password"
+					]
+				},
+				"description": "Update password"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/server/create-server",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serverName\":\"seliso002-test.m.in-app.io\",\r\n    \"priority\":1\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/server/create-server",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"server",
+						"create-server"
+					]
+				},
+				"description": "Create sesilo server"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/server/delete-server?serverName=seliso002-test.m.in-app.io",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/server/delete-server?serverName=seliso002-test.m.in-app.io",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"server",
+						"delete-server"
+					],
+					"query": [
+						{
+							"key": "serverName",
+							"value": "seliso002-test.m.in-app.io"
+						}
+					]
+				},
+				"description": "delete seliso server"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/server/get-all-server",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/server/get-all-server",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"server",
+						"get-all-server"
+					]
+				},
+				"description": "Get All fluux server"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/server/update-priority",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serverName\":\"seliso002-test.m.in-app.io\",\r\n    \"priority\":2\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/server/update-priority",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"server",
+						"update-priority"
+					]
+				},
+				"description": "Change server priority"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/verify/check-api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/verify/check-api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"verify",
+						"check-api"
+					]
+				},
+				"description": "check email verification API"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/verify/confirm?id=VTJGc2RHVmtYMTl3anF6ZGYzN01QcVMxSWIxRnF2ZCtycWdyUFk5RHJBS0U4WlAzeDNaZE9aeERQY29IbDB1dUhuM282V2Eya2ZNNmxSeTFKczYvalJPL3huOVBCeXYxWXZrd1pJaHdHS3RFNXBnQ0RhaGhnakRGcnRpOHlldGlWd2cxMzZhZDExeGhWSG9BZFNmVi93PT0=",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/verify/confirm?id=VTJGc2RHVmtYMTl3anF6ZGYzN01QcVMxSWIxRnF2ZCtycWdyUFk5RHJBS0U4WlAzeDNaZE9aeERQY29IbDB1dUhuM282V2Eya2ZNNmxSeTFKczYvalJPL3huOVBCeXYxWXZrd1pJaHdHS3RFNXBnQ0RhaGhnakRGcnRpOHlldGlWd2cxMzZhZDExeGhWSG9BZFNmVi93PT0=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"verify",
+						"confirm"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "VTJGc2RHVmtYMTl3anF6ZGYzN01QcVMxSWIxRnF2ZCtycWdyUFk5RHJBS0U4WlAzeDNaZE9aeERQY29IbDB1dUhuM282V2Eya2ZNNmxSeTFKczYvalJPL3huOVBCeXYxWXZrd1pJaHdHS3RFNXBnQ0RhaGhnakRGcnRpOHlldGlWd2cxMzZhZDExeGhWSG9BZFNmVi93PT0="
+						}
+					]
+				},
+				"description": "Email verification"
+			},
+			"response": []
+		}
+	]
+}
